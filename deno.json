@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "strict": true
+  },
+  "tasks": {
+    "compile": "deno compile -RE -o bin/sshls src/main.ts",
+    "dev": "deno run -RE src/main.ts"
+  },
+  "imports": {
+    "@std/cli": "jsr:@std/cli@1.0.6",
+    "@std/path": "jsr:@std/path@1.0.6"
+  },
+  "fmt": {
+    "options": {
+      "singleQuote": true
+    }
+  }
+}
