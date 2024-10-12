@@ -2,7 +2,7 @@ import { type ParseOptions } from 'jsr:@std/cli@1.0.6/parse-args';
 import { help } from './help.ts';
 
 export const options: ParseOptions = {
-  boolean: ['all', 'short','version', 'help'],
+  boolean: ['all', 'short', 'version', 'help'],
   alias: {
     all: 'a',
     short: 's',

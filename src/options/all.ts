@@ -23,7 +23,7 @@ export const all = () => {
       ` ${host.alias.join(', ').padEnd(maxLengths.get('alias')!)}  ${
         host.hostname.padEnd(maxLengths.get('hostname')!)
       }  ${(host.port ?? '').padEnd(maxLengths.get('port')!)}  ${
-        host.user?.padEnd(maxLengths.get('user')!)
+        (host.user ?? '').padEnd(maxLengths.get('user')!)
       }`,
     );
   }

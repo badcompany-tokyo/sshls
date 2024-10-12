@@ -1,7 +1,4 @@
-import {
-  configContent,
-  parseSSHConfig,
-} from '../libs/ssh-config.ts';
+import { configContent, parseSSHConfig } from '../libs/ssh-config.ts';
 
 export const short = () => {
   const hosts = parseSSHConfig(configContent);
