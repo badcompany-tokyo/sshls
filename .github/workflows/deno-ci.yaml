@@ -11,4 +11,4 @@ jobs:
       - name: format check
         run: deno fmt --check
       - name: lint check
-        run: deno lint --check
+        run: deno lint
