@@ -1,4 +1,4 @@
-import { type ParseOptions } from '@std/cli/parse-args';
+import { type ParseOptions } from 'jsr:@std/cli@1.0.6/parse-args';
 import { help } from './help.ts';
 
 export const options: ParseOptions = {

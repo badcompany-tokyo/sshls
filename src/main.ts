@@ -1,4 +1,4 @@
-import { parseArgs } from '@std/cli/parse-args';
+import { parseArgs } from 'jsr:@std/cli@1.0.6/parse-args';
 import { help } from './options/help.ts';
 import { options } from './options/index.ts';
 import { version } from './options/version.ts';
