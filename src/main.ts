@@ -8,14 +8,23 @@ import { defaultFn } from './options/default.ts';
 
 const flags = parseArgs(Deno.args, options);
 
-if (flags['all']) {
-  all();
-} else if (flags['short']) {
-  short();
-} else if (flags['version']) {
-  version();
-} else if (flags['help']) {
-  help();
-} else {
-  defaultFn();
+switch (true) {
+  case flags['all']:
+    all();
+    break;
+
+  case flags['short']:
+    short();
+    break;
+
+  case flags['version']:
+    version();
+    break;
+
+  case flags['help']:
+    help();
+    break;
+
+  default:
+    defaultFn();
 }
