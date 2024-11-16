@@ -5,7 +5,7 @@ import {
 } from '../libs/ssh-config.ts';
 import type { Host } from '../types.ts';
 
-export const all = () => {
+export const all = (pattern: string) => {
   const targetParams: (keyof Host)[] = ['alias', 'hostname', 'port', 'user'];
   const hosts = parseSSHConfig(configContent);
   const maxLengths = new Map<keyof Host, number>(targetParams.map((
@@ -19,8 +19,9 @@ export const all = () => {
     }`,
   );
   for (const host of hosts) {
+    if (host.alias.some((alias) => !(alias.includes(pattern)))) continue;
     console.log(
-      ` ${host.alias.join(', ').padEnd(maxLengths.get('alias')!)}  ${
+      `${host.alias.join(', ').padEnd(maxLengths.get('alias')!)}  ${
         host.hostname.padEnd(maxLengths.get('hostname')!)
       }  ${(host.port ?? '').padEnd(maxLengths.get('port')!)}  ${
         (host.user ?? '').padEnd(maxLengths.get('user')!)

@@ -10,11 +10,11 @@ const flags = parseArgs(Deno.args, options);
 
 switch (true) {
   case flags['all']:
-    all();
+    all(flags._.toString());
     break;
 
   case flags['short']:
-    short();
+    short(flags._.toString());
     break;
 
   case flags['version']:
@@ -26,5 +26,5 @@ switch (true) {
     break;
 
   default:
-    defaultFn();
+    defaultFn(flags._.toString());
 }
