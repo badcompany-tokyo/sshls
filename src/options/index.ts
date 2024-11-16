@@ -9,9 +9,11 @@ export const options: ParseOptions = {
     version: 'v',
     help: 'h',
   },
-  unknown: (arg) => {
-    console.log(`sshls: illegal option ${arg}`);
-    help();
-    Deno.exit(1);
+  unknown: (arg, key) => {
+    if (key) {
+      console.log(`sshls: illegal option ${arg}`);
+      help();
+      Deno.exit(1);
+    }
   },
 };
