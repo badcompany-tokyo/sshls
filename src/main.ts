@@ -5,23 +5,28 @@ import { version } from './options/version.ts';
 import { all } from './options/all.ts';
 import { short } from './options/short.ts';
 import { defaultFn } from './options/default.ts';
+import { tail } from './options/tail.ts';
 
 const flags = parseArgs(Deno.args, options);
 
 switch (true) {
-  case flags['all']:
+  case flags.all:
     all(flags._.toString());
     break;
 
-  case flags['short']:
+  case flags.short:
     short(flags._.toString());
     break;
 
-  case flags['version']:
+  case flags.tail:
+    tail(flags._.toString());
+    break;
+
+  case flags.version:
     version();
     break;
 
-  case flags['help']:
+  case flags.help:
     help();
     break;
 
